@@ -42,7 +42,7 @@
     position: fixed;
     top: 15px;     /* distance from top */
     left: 15px;   /* distance from right */
-    width: 220px;  /* adjust size */
+    width: 300px;  /* adjust size */
     height: auto;
     z-index: 1000; /* keeps it above other elements */
       
@@ -159,7 +159,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
       } else if (this.value == 2) {
         display.textContent = "Male";
         GenderFilter = "M";
-      } else if (this.value == 3) {
+      } else (this.value == 3) {
         display.textContent = "All";
         GenderFilter = "A";
       }
@@ -188,7 +188,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     }
     
   </script>
-
+<p id="output"></p>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
 </body>
