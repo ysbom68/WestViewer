@@ -172,12 +172,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
   if (GenderFilter === "F") {
     // 1–77
     randomNumber = Math.floor(Math.random() * 77) + 1;
-  }
-  if (GenderFilter === "M") {
+  } else if (GenderFilter === "M") {
     // 78–130
     randomNumber = Math.floor(Math.random() * 53) + 78;
-  }
-  if (GenderFilter === "A") {
+  } else (GenderFilter === "A") {
     // 78–130
     randomNumber = Math.floor(Math.random() * 130) + 1;
   }
