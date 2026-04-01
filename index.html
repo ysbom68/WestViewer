@@ -159,7 +159,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
       } else if (this.value == 2) {
         display.textContent = "Male";
         GenderFilter = "M";
-      } else (this.value == 3) {
+      } else if (this.value == 3) {
         display.textContent = "All";
         GenderFilter = "A";
       }
@@ -175,7 +175,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   } else if (GenderFilter === "M") {
     // 78–130
     randomNumber = Math.floor(Math.random() * 53) + 78;
-  } else (GenderFilter === "A") {
+  } else if (GenderFilter === "A") {
     // 78–130
     randomNumber = Math.floor(Math.random() * 130) + 1;
   }
