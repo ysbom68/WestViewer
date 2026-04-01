@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WestViewer</title>
+  <img src="Westviewr logo.png" class="top-left-image">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+    }
 
+    /* Top-left text */
+    .text {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    /* Center everything */
+    .center {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+    }
+
+    img {
+      width: 400px;
+      max-width: 90vw;
+      height: auto;
+      border: 2px solid black;
+      border-radius: 17px;
+    }
+    .top-left-image {
+    position: fixed;
+    top: 15px;     /* distance from top */
+    left: 15px;   /* distance from right */
+    width: 220px;  /* adjust size */
+    height: auto;
+    z-index: 1000; /* keeps it above other elements */
+      
+    box-shadow: none;
+    filter: none;
+    border: none;
+    }
+
+    button {
+      font-family: inherit; /* uses Montserrat */
+      margin-top: 0px;
+      padding: 10px 155px;
+      font-size: 16px;
+      border: 2px solid black;
+      border-radius: 12px;
+      background-color: #C10A0A;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s ease, 
+      transform 0.1s ease,
+      border-width 0.1s ease;
+    }
+    /* Hover = darker */
+button:hover {
+  background-color: #650304;
+  }
+
+/* Click animation */
+button:active {
+  transform: scale(0.95);   /* slight shrink */
+  background-color: #;    /* quick bright flash */
+  border-width: 4px;            /* border thickens on click */
+  filter: brightness(0.9);
+  transition: all 0.15s ease;
+}
+    input[type="range"] {
+  -webkit-appearance: none; /* remove default styling in Chrome/Safari */
+  width: 300px;
+  height: 8px;
+  background: #ddd;        /* track color */
+  border-radius: 4px;
+  outline: none;           /* remove outline on focus */
+}
+
+/* Webkit browsers (Chrome, Safari) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* remove default thumb */
+  width: 20px;
+  height: 20px;
+  background: #C10A0A;     /* thumb color */
+  border: 2px solid black; /* optional black outline */
+  border-radius: 50%;      /* make it circular */
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.2);  /* thumb grows on press */
+  background: #FF1A1A;    /* flash effect */
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #C10A0A;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+/* Track for Firefox */
+input[type="range"]::-moz-range-track {
+  background: #ddd;
+  height: 8px;
+  border-radius: 4px;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #650304; 
+  input[type="range"] {
+  background: linear-gradient(to right, #C10A0A 50%, #ddd 50%);
+}
+  #slider {
+  margin-top: 30px;
+}
+  </style>
+
+  <div class="text">
+  
+  </div>
+
+  <p id=""></p>
+
+  <div class="center">
+    <img id="myImage" src="1.jpg">
+    <button onclick="generateNumber()">Smash</button>
+    <button onclick="generateNumber()">Pass</button>
+    <input type="range" id="slider" min="1" max="3" value="1">
+    <p id="valueDisplay">Female</p>
+  </div>
+
+  <script>
+    let GenderFilter = "F";
+    const slider = document.getElementById("slider");
+    const display = document.getElementById("valueDisplay");
+
+    // Slider logic
+    slider.oninput = function () {
+      if (this.value == 1) {
+        display.textContent = "Female";
+        GenderFilter = "F";
+      } else if (this.value == 2) {
+        display.textContent = "Male";
+        GenderFilter = "M";
+      } else if (this.value == 3) {
+        display.textContent = "All";
+        GenderFilter = "A";
+      }
+    };
+
+    // Main function
+    function generateNumber() {
+  let randomNumber;
+
+  if (GenderFilter === "F") {
+    // 1–77
+    randomNumber = Math.floor(Math.random() * 77) + 1;
+  }
+  if (GenderFilter === "M") {
+    // 78–130
+    randomNumber = Math.floor(Math.random() * 53) + 78;
+  }
+  if (GenderFilter === "A") {
+    // 78–130
+    randomNumber = Math.floor(Math.random() * 130) + 1;
+  }
+
+  let imagePath =randomNumber + ".jpg";
+  document.getElementById("myImage").src = imagePath;
+  document.getElementById("output").textContent = imagePath;
+    }
+    
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+</body>
+</html>
