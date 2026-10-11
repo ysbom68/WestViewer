@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>WestViewer</title>
-  <img src="Westviewr logo.png" class="top-left-image">
   <style>
     body {
       margin: 0;
@@ -11,6 +10,7 @@
       background-color: #ffffff;
       font-family: 'Montserrat', sans-serif;
     }
+
 
     /* Top-left text */
     .text {
@@ -72,9 +72,9 @@ button:hover {
 
 /* Click animation */
 button:active {
-  transform: scale(0.95);   /* slight shrink */
-  background-color: #;    /* quick bright flash */
-  border-width: 4px;            /* border thickens on click */
+  transform: scale(0.2);   /* slight shrink */
+  background-color: #FF1A1A;    /* quick bright flash */
+  border-width: 8px;            /* border thickens on click */
   filter: brightness(0.9);
   transition: all 0.15s ease;
 }
@@ -179,8 +179,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
     // 78–130
     randomNumber = Math.floor(Math.random() * 130) + 1;
   }
-
-  let imagePath =randomNumber + ".jpg";
+  <img src="https://raw.githubusercontent.com/ysbom68/WestViewer/refs/heads/main/Westviewr%20logo.png" class="top-left-image">
+    
+  let imagePath ="https://raw.githubusercontent.com/ysbom68/WestViewer/refs/heads/main/" + randomNumber + ".jpg";
   document.getElementById("myImage").src = imagePath;
   document.getElementById("output").textContent = imagePath;
     }
